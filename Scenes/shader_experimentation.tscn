@@ -1,11 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnh6fy0ahv27m"]
+[gd_scene load_steps=6 format=3 uid="uid://cnh6fy0ahv27m"]
 
-[ext_resource type="PackedScene" uid="uid://dmqov64j1lith" path="res://Scenes/sceneobjects/candle.tscn" id="1_qqebx"]
-[ext_resource type="Script" uid="uid://bjlv5jjpjjg0l" path="res://Scripts/candle.gd" id="3_qg3qk"]
 [ext_resource type="Material" uid="uid://dx1hk7k4tsfh2" path="res://Materials/ps1/test/test_material_borked.tres" id="3_qqebx"]
 [ext_resource type="Material" uid="uid://m1raygcig17w" path="res://Materials/ps1/test/test_material.tres" id="5_mpad8"]
 [ext_resource type="Compositor" uid="uid://r76ikc2vw5qd" path="res://Scripts/Shaders/ps1_compositor.tres" id="5_qqebx"]
-[ext_resource type="PackedScene" path="res://Scenes/mp_basement.tscn" id="6_qqebx"]
 
 [sub_resource type="GDScript" id="GDScript_wuk74"]
 script/source = "extends Node3D
@@ -30,8 +27,11 @@ func _process(_delta):
 	pass
 "
 
-[sub_resource type="GDScript" id="GDScript_1gf5m"]
+[sub_resource type="GDScript" id="GDScript_drabv"]
 script/source = "extends Node3D
+
+func _process(delta):
+	rotate(Vector3.UP, delta*1/4);
 "
 
 [node name="ShaderExperimentation" type="Node3D"]
@@ -43,7 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9129197, 0.4081393, 0, -0.4081393, 0.91291
 [node name="Borked Box" type="CSGBox3D" parent="."]
 transform = Transform3D(0.0712526, 0.04545814, -0.053447414, -0.036364563, 0.08907052, 0.027277485, 0.060005724, -1.4901161e-09, 0.079995714, 0.5696959, -0.12849091, -0.4387633)
 material = ExtResource("3_qqebx")
-script = ExtResource("3_qg3qk")
+script = SubResource("GDScript_drabv")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.70591784, 2.7488415)
@@ -56,37 +56,21 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109431535, 0, -0.553472)
 tracker = &"right_hand"
 
-[node name="candle" parent="XROrigin3D/Righthand" instance=ExtResource("1_qqebx")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.19503811, -0.7685749, -2.3626134)
-
 [node name="Lefthand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19684103, 0, -0.23747882)
 tracker = &"left_hand"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="XROrigin3D/Lefthand"]
-transform = Transform3D(0.0712526, 0.04545814, -0.053447414, -0.036364563, 0.08907052, 0.027277485, 0.060005724, -1.4901161e-09, 0.079995714, 0, 0, 0)
-material_override = ExtResource("5_mpad8")
-script = SubResource("GDScript_1gf5m")
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.767619, 0)
-material_override = ExtResource("3_qqebx")
-radial_segments = 48
-rings = 24
-
 [node name="Borked Box2" type="CSGBox3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, 0, -0.046485394, -0.532)
 material = ExtResource("5_mpad8")
-script = ExtResource("3_qg3qk")
+script = SubResource("GDScript_drabv")
 
 [node name="Borked Box3" type="CSGBox3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, 0.24695498, -0.046485394, -0.41412944)
 material = ExtResource("5_mpad8")
-script = ExtResource("3_qg3qk")
+script = SubResource("GDScript_drabv")
 
 [node name="Borked Box4" type="CSGBox3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, -0.16578847, -0.046485394, -0.20144108)
+transform = Transform3D(-0.08579035, 0, 0.051381085, 0, 0.09999998, 0, -0.051381085, 0, -0.08579036, -0.08484102, 0.033117928, 0.016507812)
 material = ExtResource("5_mpad8")
-script = ExtResource("3_qg3qk")
-
-[node name="Basement" parent="." instance=ExtResource("6_qqebx")]
+script = SubResource("GDScript_drabv")
