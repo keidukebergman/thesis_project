@@ -10,8 +10,6 @@ effect_callback_type = 4
 needs_motion_vectors = false
 needs_normal_roughness = false
 script = ExtResource("1_n8lbn")
-x_size = null
-y_size = null
 shader_code = "// Determine the size of each pixel block      
 // Larger values yield stronger pixelation
 const int pixel_size = 4;

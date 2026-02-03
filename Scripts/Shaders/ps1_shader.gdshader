@@ -14,6 +14,7 @@ uniform bool do_affine_mapping = false;
 group_uniforms;
 
 varying vec4 clip_position;
+varying vec4 triangle_avg_depth;
 
 void vertex() {
 	mat4 model_matrix = MODEL_MATRIX;
@@ -26,6 +27,7 @@ void vertex() {
 	POSITION = clip_pos;
 	clip_position = clip_pos;
 	NORMAL = MODEL_NORMAL_MATRIX * NORMAL;
+	
 	if (do_affine_mapping == true) {
 		UV *= clip_pos.w;
 		COLOR *= clip_pos.w;
