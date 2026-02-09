@@ -149,7 +149,7 @@ resolution={
 }
 depth_quantization={
 "type": "float",
-"value": 99.0
+"value": 75.0
 }
 
 [xr]

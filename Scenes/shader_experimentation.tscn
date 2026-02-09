@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://cnh6fy0ahv27m"]
+[gd_scene load_steps=12 format=4 uid="uid://cnh6fy0ahv27m"]
 
 [ext_resource type="Script" uid="uid://cjnyuu47lxfwb" path="res://Scripts/XR/start_xr.gd" id="2_wuk74"]
+[ext_resource type="Script" uid="uid://05rgwgm68ap8" path="res://Scenes/xr_camera_3d.gd" id="3_1gf5m"]
 [ext_resource type="Shader" uid="uid://bcahr5qafa6f1" path="res://Scripts/Shaders/ps1_shader.gdshader" id="4_1gf5m"]
 [ext_resource type="Texture2D" uid="uid://dht4rvx8lwvi7" path="res://models/blowtorch_Welding_tool.png" id="4_qg3qk"]
 [ext_resource type="Script" uid="uid://d03cvurlnafpf" path="res://Scenes/shader_experimentation.tres.gd" id="4_qqebx"]
@@ -64,6 +65,7 @@ script = ExtResource("2_wuk74")
 compositor = ExtResource("5_qqebx")
 current = true
 size = 0.185
+script = ExtResource("3_1gf5m")
 
 [node name="Righthand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030263782, 0, -0.1764752)
@@ -82,12 +84,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19684103, 0, -0.23747882)
 tracker = &"left_hand"
 
 [node name="Borked Box9" type="CSGBox3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, -0.14763081, 0.70613325, -0.48673725)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, -0.1657866, 0.70613325, -0.41459394)
+material = ExtResource("5_mpad8")
+script = ExtResource("4_qqebx")
+
+[node name="Borked Box14" type="CSGBox3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, 0.23424298, 0.70613325, -0.41459394)
+material = ExtResource("5_mpad8")
+
+[node name="Borked Box15" type="CSGBox3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, 0.2278924, 0.6957874, -0.3746483)
+material = ExtResource("5_mpad8")
+
+[node name="Borked Box16" type="CSGBox3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, 0.24649167, 0.7114452, -0.40124252)
+material = ExtResource("5_mpad8")
+
+[node name="Borked Box17" type="CSGBox3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, 0.3082903, 0.70485073, -0.4435328)
+material = ExtResource("5_mpad8")
+
+[node name="Borked Box18" type="CSGBox3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, 0.42346036, 0.70485073, -0.4333168)
+material = ExtResource("5_mpad8")
+
+[node name="Borked Box19" type="CSGBox3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, 0.36119303, 0.65656245, -0.42654356)
+material = ExtResource("5_mpad8")
+
+[node name="Borked Box20" type="CSGBox3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, 0.41682854, 0.6753326, -0.3826292)
+material = ExtResource("5_mpad8")
+
+[node name="Borked Box21" type="CSGBox3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, 0.344042, 0.65250146, -0.3327482)
+material = ExtResource("5_mpad8")
+
+[node name="Borked Box12" type="CSGBox3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, -0.0788506, 0.6822503, -0.35156155)
+material = ExtResource("5_mpad8")
+script = ExtResource("4_qqebx")
+
+[node name="Borked Box13" type="CSGBox3D" parent="."]
+transform = Transform3D(0.074954525, 0, 0.06619532, 0, 0.1, 0, -0.06619532, 0, 0.07495453, -0.059391454, 0.70873517, -0.38274163)
 material = ExtResource("5_mpad8")
 script = ExtResource("4_qqebx")
 
 [node name="Borked Box11" type="CSGBox3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, -0.1360845, 0.7159294, -0.41424188)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.10000001, -0.24981228, 0.7159294, -0.48509467)
 material = ExtResource("5_mpad8")
 script = ExtResource("4_qqebx")
 

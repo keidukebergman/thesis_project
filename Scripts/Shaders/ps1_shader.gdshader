@@ -23,10 +23,13 @@ void vertex() {
 	vec4 world_space_pos = model_matrix * vec4(VERTEX, 1);
 	vec4 view_pos = VIEW_MATRIX * world_space_pos;
 	vec4 clip_pos = PROJECTION_MATRIX * view_pos;
-    float layers = mix(1000.0, 10.0, depth_quantization);
-    clip_pos.z = floor(clip_pos.z * layers) / layers;
+
 	if (vertex_snap) {
 		clip_pos.xy = round(clip_pos.xy / clip_pos.w * resolution) / resolution * clip_pos.w;
+	}
+	if (depth_quantization > 0.0) {
+	    float scale = depth_quantization; 
+	    clip_pos.z = floor(clip_pos.z * scale) / scale;
 	}
 	POSITION = clip_pos;
 	clip_position = clip_pos;
