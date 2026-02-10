@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://de05k4drgo1l8"]
+
+[ext_resource type="Shader" uid="uid://bcahr5qafa6f1" path="res://Scripts/Shaders/ps1_shader.gdshader" id="1_8ca8y"]
+[ext_resource type="Texture2D" uid="uid://3yjiohsm3btb" path="res://Textures/Tiles/Metal_tile_crisp_V2.png" id="2_ash2b"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8ca8y")
+shader_parameter/my_texture = ExtResource("2_ash2b")
+shader_parameter/tint = Color(0.9999998, 0.90267223, 0.8648269, 1)
+shader_parameter/vertex_snap = true
+shader_parameter/goraud_shaded = false
+shader_parameter/do_affine_mapping = true

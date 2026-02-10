@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvjj8gnllo8f6"]
+
+[ext_resource type="Material" uid="uid://de05k4drgo1l8" path="res://Materials/Metal_block.tres" id="1_k4ews"]
+
+[node name="Floor_tile" type="CSGBox3D"]
+material = ExtResource("1_k4ews")

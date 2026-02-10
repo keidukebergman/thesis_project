@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3yjiohsm3btb"
-path.s3tc="res://.godot/imported/Metal_tile_crisp_V2.png-b742d211aba5b96014f83ef3d0131280.s3tc.ctex"
-path.etc2="res://.godot/imported/Metal_tile_crisp_V2.png-b742d211aba5b96014f83ef3d0131280.etc2.ctex"
+uid="uid://cgr5p1vxvsifd"
+path.s3tc="res://.godot/imported/Wall_LOD2_wall64_p.png-8fb7f1a44e48b40922091a4fd45e4de0.s3tc.ctex"
+path.etc2="res://.godot/imported/Wall_LOD2_wall64_p.png-8fb7f1a44e48b40922091a4fd45e4de0.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "58f4538b9e9c3184522830948790a3a3"
+}
 
 [deps]
 
-source_file="res://Textures/Tiles/Metal_tile_crisp_V2.png"
-dest_files=["res://.godot/imported/Metal_tile_crisp_V2.png-b742d211aba5b96014f83ef3d0131280.s3tc.ctex", "res://.godot/imported/Metal_tile_crisp_V2.png-b742d211aba5b96014f83ef3d0131280.etc2.ctex"]
+source_file="res://models/Wall_LOD2_wall64_p.png"
+dest_files=["res://.godot/imported/Wall_LOD2_wall64_p.png-8fb7f1a44e48b40922091a4fd45e4de0.s3tc.ctex", "res://.godot/imported/Wall_LOD2_wall64_p.png-8fb7f1a44e48b40922091a4fd45e4de0.etc2.ctex"]
 
 [params]
 
@@ -25,7 +28,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

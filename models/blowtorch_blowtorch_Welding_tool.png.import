@@ -2,22 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3yjiohsm3btb"
-path.s3tc="res://.godot/imported/Metal_tile_crisp_V2.png-b742d211aba5b96014f83ef3d0131280.s3tc.ctex"
-path.etc2="res://.godot/imported/Metal_tile_crisp_V2.png-b742d211aba5b96014f83ef3d0131280.etc2.ctex"
+uid="uid://tdll6ef14m8h"
+path="res://.godot/imported/blowtorch_blowtorch_Welding_tool.png-8c427e61be32f566267151850cdddb32.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
+}
+generator_parameters={
+"md5": "20caa7a15dcf8fcdddf12482455a5466"
 }
 
 [deps]
 
-source_file="res://Textures/Tiles/Metal_tile_crisp_V2.png"
-dest_files=["res://.godot/imported/Metal_tile_crisp_V2.png-b742d211aba5b96014f83ef3d0131280.s3tc.ctex", "res://.godot/imported/Metal_tile_crisp_V2.png-b742d211aba5b96014f83ef3d0131280.etc2.ctex"]
+source_file="res://models/blowtorch_blowtorch_Welding_tool.png"
+dest_files=["res://.godot/imported/blowtorch_blowtorch_Welding_tool.png-8c427e61be32f566267151850cdddb32.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -25,7 +26,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

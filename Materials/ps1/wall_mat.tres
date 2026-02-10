@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://e6uy32s0eqvd"]
+
+[ext_resource type="Shader" uid="uid://bcahr5qafa6f1" path="res://Scripts/Shaders/ps1_shader.gdshader" id="1_lpuwg"]
+[ext_resource type="Texture2D" uid="uid://cujw4f6tdkavc" path="res://models/w1_L1_Walltex.png" id="2_lpuwg"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_lpuwg")
+shader_parameter/my_texture = ExtResource("2_lpuwg")
+shader_parameter/tint = Color(1, 1, 1, 1)
+shader_parameter/vertex_snap = true
+shader_parameter/goraud_shaded = false
+shader_parameter/do_affine_mapping = true
