@@ -1,4 +1,5 @@
 extends Node
+class_name ParameterHandler
 
 @export var resolution_scale:int = 1
 @export var jitter_scale:int = 1
@@ -11,6 +12,11 @@ extends Node
 @export var color_slider:HSlider
 @export var affine_toggle:CheckButton
 var textvalue = ""
+var settings_visible = false
+@export var control_node:Control
+@export var output_text:TextEdit
+@export var copy_to_clip_button:Button
+@export var generate_parameters_button:Button
 
 func _ready() -> void:
 	resolution_scale = randi_range(resolution_slider.min_value, resolution_slider.max_value)
@@ -26,6 +32,14 @@ func _ready() -> void:
 	color_slider.value_changed.connect(set_color_depth)
 	jitter_slider.value_changed.connect(set_jitter)
 	affine_toggle.toggled.connect(set_affine_mapping)
+	generate_parameters_button.pressed.connect(set_parameter_string)
+	copy_to_clip_button.pressed.connect(set_clip)
+	toggle_visible()
+
+func toggle_visible():
+	settings_visible = !settings_visible
+	control_node.visible = settings_visible
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if settings_visible else Input.MOUSE_MODE_CAPTURED
 
 func set_resolution(_value):
 	var scale = round(resolution_slider.value)
@@ -50,9 +64,14 @@ func set_affine_mapping(value):
 func set_clip():
 	DisplayServer.clipboard_set(textvalue)
 
+func set_parameter_string():
+	output_text.text = textvalue
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("one"):
 		set_clip()
+	if Input.is_action_just_pressed("toggle_menu"):
+		toggle_visible()
 
 func _on_setting_changed():
 	var comp = overlay_compositor as Compositor
