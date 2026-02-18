@@ -24,20 +24,15 @@ void vertex() {
 	if (vertex_snap) {
 		clip_pos.xy = round(clip_pos.xy / clip_pos.w * resolution) / resolution * clip_pos.w;
 	}
-	if (depth_quantization > 9999999.0) {
-		float offset = sin(clip_pos.z * 0.1) * depth_quantization * clip_pos.w;
-		clip_pos.z = clamp(clip_pos.z + offset, -clip_pos.w, clip_pos.w);
-	//	clip_pos.z = floor(clip_pos.z * scale) / scale;
-	}
 	POSITION = clip_pos;
 	clip_position = clip_pos;
 	NORMAL = MODEL_NORMAL_MATRIX * NORMAL;
-	
+
 	if (do_affine_texture_mapping == true) {
 		UV *= clip_pos.w;
 		COLOR *= clip_pos.w;
 	}
-	
+
 }
 
 void fragment() {

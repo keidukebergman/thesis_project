@@ -20,7 +20,6 @@ func _input(event):
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(look_rotation)
 	camera.rotation_degrees.x = look_rotation.x
 	rotation_degrees.y = look_rotation.y
 	if(Input.is_key_pressed(KEY_W)):

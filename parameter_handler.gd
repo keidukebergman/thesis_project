@@ -29,7 +29,7 @@ func _ready() -> void:
 	resolution_scale = randi_range(round(resolution_slider.min_value), round(resolution_slider.max_value))
 	jitter_scale = randi_range(round(jitter_slider.min_value), round(jitter_slider.max_value))
 	color_depth = randi_range(round(color_slider.min_value), round(color_slider.max_value))
-	z_depth = randf_range((depth_slider.min_value), (depth_slider.max_value))
+	#z_depth = randf_range((depth_slider.min_value), (depth_slider.max_value))
 	lod_cascades = randi_range(round(lod_cascade_slider.min_value), round(lod_cascade_slider.max_value))
 	lod_distance = randf_range(lod_distance_slider.min_value, lod_distance_slider.max_value)
 	
@@ -39,7 +39,9 @@ func _ready() -> void:
 	resolution_slider.value = resolution_scale
 	jitter_slider.value = jitter_scale
 	color_slider.value = color_depth
-	depth_slider.value = z_depth
+	lod_cascade_slider.value_changed.connect(set_lod_cascades)
+	lod_distance_slider.value_changed.connect(set_lod_distance)
+	#depth_slider.value = z_depth
 	
 	resolution_slider.value_changed.connect(set_resolution)
 	color_slider.value_changed.connect(set_color_depth)
@@ -47,7 +49,7 @@ func _ready() -> void:
 	affine_toggle.toggled.connect(set_affine_mapping)
 	generate_parameters_button.pressed.connect(set_parameter_string)
 	copy_to_clip_button.pressed.connect(set_clip)
-	depth_slider.value_changed.connect(set_depth)
+	#depth_slider.value_changed.connect(set_depth)
 	toggle_visible()
 
 func toggle_visible():
@@ -101,16 +103,17 @@ func _process(delta: float) -> void:
 		toggle_visible()
 
 func _on_setting_changed():
+	print("Setting changed")
 	var comp = overlay_compositor as Compositor
 	var res_scale = resolution_slider.max_value - resolution_scale + 1
 	comp.compositor_effects[0].set_scale_factor(res_scale)
 	comp.compositor_effects[0].set_color_depth(color_depth)
-	var jitter_resolution = [1280/jitter_scale, 960/jitter_scale]
+	var jitter_resolution = [916/jitter_scale, 960/jitter_scale]
 	RenderingServer.global_shader_parameter_set("resolution", jitter_resolution)
 	RenderingServer.global_shader_parameter_set("do_affine_texture_mapping", do_affine_mapping)
-	RenderingServer.global_shader_parameter_set("depth_quantization", z_depth)
+#	RenderingServer.global_shader_parameter_set("depth_quantization", z_depth)
 	RenderingServer.global_shader_parameter_set("scale_factor", res_scale)
 	RenderingServer.global_shader_parameter_set("color_depth", color_depth)
-	LODCascades.LOD_cascades = lod_cascades
-	LODCascades.LOD_distance = lod_distance
+	LODCascades.set_LOD_cascades(lod_cascades)
+	LODCascades.set_LOD_distance(lod_distance)
 	textvalue = "rs:" + str(resolution_scale) + ",\njs:" + str(jitter_scale) + ",\ncd:" + str(color_depth) + ",\nam:" + str(do_affine_mapping) + ",\ndq" + str(z_depth)

@@ -10,4 +10,3 @@ shader_parameter/my_texture = ExtResource("2_ash2b")
 shader_parameter/tint = Color(0.9999998, 0.90267223, 0.8648269, 1)
 shader_parameter/vertex_snap = true
 shader_parameter/goraud_shaded = false
-shader_parameter/do_affine_mapping = true
